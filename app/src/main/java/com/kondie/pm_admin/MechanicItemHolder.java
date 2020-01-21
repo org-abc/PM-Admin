@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,7 +37,8 @@ public class MechanicItemHolder extends RecyclerView.ViewHolder {
         @Override
         public void onClick(View v) {
             clickedMechanicButton = shopStatusButton;
-            new ChangeMechanicStatus().execute((shopStatusButton.getText().toString().equalsIgnoreCase("active")) ? "deactivate" : "activate", hiddenMechanicEmail.getText().toString());
+            String act = (shopStatusButton.getText().toString().equalsIgnoreCase("active")) ? "deactivate" : "activate";
+            new ChangeMechanicStatus().execute(act, hiddenMechanicEmail.getText().toString());
         }
     };
 
