@@ -44,7 +44,7 @@ public class ChangeMechanicStatus extends AsyncTask<String, Void, String> {
             conn.setDoOutput(true);
 
             Uri.Builder builder = new Uri.Builder().appendQueryParameter("activity", act)
-                    .appendQueryParameter("email", prefs.getString("email", ""));
+                    .appendQueryParameter("email", params[1]);
             String query = builder.build().getEncodedQuery();
 
             OutputStream outStream = conn.getOutputStream();
