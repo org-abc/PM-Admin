@@ -101,7 +101,7 @@ public class MechanicListAdapter extends RecyclerView.Adapter<MechanicItemHolder
                 holder.shopStatusButton.setBackgroundResource(R.drawable.shop_button_backg);
             }
             if (!item.getMechanicDpPath().equalsIgnoreCase("null") && !item.getMechanicDpPath().equalsIgnoreCase("")) {
-                Picasso.with(activity).load(item.getMechanicDpPath()).into(holder.shopDp);
+                Picasso.with(activity).load(item.getMechanicDpPath().replace(Constants.WRONG_PART, Constants.CORRECT_PART)).placeholder(R.drawable.user_icon).into(holder.shopDp);
             } else {
                 //holder.userDp.setImageResource(R.drawable.user_icon);
             }
